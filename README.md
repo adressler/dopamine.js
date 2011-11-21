@@ -20,6 +20,11 @@ See examples.html
 dopamine.js requires jQuery >= 1.7  
 Get it from: [http://jquery.com](http://jquery.com)
 
+## License
+
+Licensed under the MIT license.  
+See file LICENSE for details.
+
 ## Authors
 
 dopamine.js was created and is maintained by Armin Dressler <dressler.armin at gmail.com>

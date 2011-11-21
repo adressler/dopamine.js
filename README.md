@@ -17,7 +17,7 @@ See examples.html
 
 ## Dependencies
 
-dopamine.js requires jQuery >= 1.7.0
+dopamine.js requires jQuery >= 1.7  
 Get it from: [http://jquery.com](http://jquery.com)
 
 ## Authors

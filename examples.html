@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dopamine.js – examples</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="dopamine.js"></script>
+	<script src="dopamine.console_logger.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(function() {
+
+			var app, myApp;
+
+			// --- EVENTS
+
+			app = new Dopamine();
+
+			// bind to event 'test'
+			app.bind('test', function(e, type, arg) {
+				console.log("event 'test'", arg);
+			});
+
+			// bind to event 'default'
+			app.bind('default', function(e, type, arg) {
+				console.log("event 'default'", arg);
+			});
+
+			// triggers test and default events
+			app.call('test', 'Hello World');
+
+			// triggers only default event
+			app.call('example', 42);
+
+
+			// --- INHERITANCE AND METHOD CALLS
+
+			// create new class, that inherits and extends Dopamine
+			// callback type names must start with underscore
+			var MyDopamine = Dopamine.extend({
+				_example: function(type, arg) {
+					console.log('MyDopamine._example called', arg);
+				}
+			});
+
+			// instantiate and use like original Dopamine
+			myApp = new MyDopamine();
+
+			myApp.call('example', 42);
+
+
+			// --- PLUGINS
+
+			app = new Dopamine();
+
+			// add DopamineConsoleLogger
+			app.addPlugin(new DopamineConsoleLogger());
+
+			// add MyDopamine
+			app.addPlugin(myApp);
+
+			// logs type and argument to console
+			app.call('example', ['foo', 'bar']);
+
+		});
+	</script>
+</head>
+<body>
+	<h1>dopamine.js</h1>
+	View console output
+</body>
+</html>

@@ -36,4 +36,4 @@ Many thanks to Dirk Brünsicke for suggesting the name 'dopamine'.
 ## Next steps
 
 - Include documentation into this readme
-- Add jQuery.Callbacks in addition to events, methods and plugins
+- Expose more of the native interfaces of Events and Callbacks

@@ -17,7 +17,8 @@
 			app = new Dopamine({
 				enable: true, // ignores all calls when false
 				accept: [], // accept only whitelisted types, or all if empty
-				ignore: [] // ignore all blacklisted types, or none if empty
+				ignore: [], // ignore all blacklisted types, or none if empty
+				pass: true // pass down calls to plugins if true
 			});
 
 			// bind to event 'test': use bind(message_type, function)

@@ -37,6 +37,3 @@ Many thanks to Dirk Brünsicke for suggesting the name 'dopamine'.
 
 - Include documentation into this readme
 - Add jQuery.Callbacks in addition to events, methods and plugins
-- Add options
-	- limit instance to 'listen' to a limited list of message types
-	- enable/disable

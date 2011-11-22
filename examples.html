@@ -39,6 +39,26 @@
 			app.call('example', 42);
 
 
+			// --- CALLBACKS
+
+			app = new Dopamine();
+
+			app.addCallback('test', function(type, arg) {
+				console.log("callback #1 'test'", arg);
+			});
+			app.addCallback({
+				test: function(type, arg) {
+					console.log("callback #2 'test'", arg);
+				},
+				default: function(type, arg) {
+					console.log("callback 'default'", arg);
+				}
+			});
+
+			// triggers both 'test' callbacks as well as 'default' callback
+			app.call('test', 'Foo');
+
+
 			// --- INHERITANCE AND METHOD CALLS
 
 			// create new class, that inherits and extends Dopamine

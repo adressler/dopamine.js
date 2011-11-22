@@ -4,7 +4,7 @@ dopamine.js is under development. Features and interfaces are likely to change i
 
 ## Description
 
-dopamine.js is a neurotransmitter for your javascript application.
+dopamine.js is like a neurotransmitter for your javascript application.
 
 It helps to connect software parts by messaging via Events, Callbacks, Method Calls or Plugins through an unique interface.
 

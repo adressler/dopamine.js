@@ -126,8 +126,9 @@
 	Dopamine.extend = function(prototype) {
 		var newDopamine = function() {
 			this.init.apply(this, arguments);
-		}
-		newDopamine.prototype = $.extend({}, Dopamine.prototype, prototype);
+		};
+		newDopamine.prototype = $.extend({}, this.prototype, prototype || {});
+		newDopamine.extend = Dopamine.extend;
 		return newDopamine;
 	}
 

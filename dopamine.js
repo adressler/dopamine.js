@@ -7,16 +7,25 @@
  */
 ;(function($) {
 
+	var default_options = {
+		enable: true,
+		accept: [],
+		ignore: []
+	}
+
 	var Dopamine = function() {
-		this.init();
+		this.init.apply(this, arguments);
 	}
 
 	Dopamine.prototype = {
 
 		name: 'Dopamine',
 
-		init: function() {
+		init: function(options) {
+			options = options || {};
+
 			this.plugins = [];
+			this.options = $.extend({}, default_options, options);
 		},
 
 		bind: function(type, func) {
@@ -34,7 +43,17 @@
 			});
 		},
 
+		acceptsType: function(type) {
+			var whitelisted = (this.options.accept.length == 0) || (this.options.accept.length > 0 && this.options.accept.indexOf(type) > -1);
+			var blacklisted = this.options.ignore.length > 0 && this.options.ignore.indexOf(type) > -1;
+			return whitelisted && !blacklisted;
+		},
+
 		call: function(type, arg) {
+			if (!this.options.enable || !this.acceptsType(type)) {
+				return false;
+			}
+
 			arg = arg || null;
 
 			// call events
@@ -47,10 +66,12 @@
 				this.__call_method('default', type, arg);
 			}
 
-			// call listeners
-			$.each(this.plugins, function(i, listener) {
-				listener.call(type, arg);
+			// call plugins
+			$.each(this.plugins, function(i, plugin) {
+				plugin.call(type, arg);
 			});
+
+			return true;
 		},
 
 		__call_method: function(method, type, arg) {
@@ -66,7 +87,7 @@
 
 	Dopamine.extend = function(prototype) {
 		var newDopamine = function() {
-			this.init(arguments);
+			this.init.apply(this, arguments);
 		}
 		newDopamine.prototype = $.extend({}, Dopamine.prototype, prototype);
 		return newDopamine;

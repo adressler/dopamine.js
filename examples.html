@@ -81,7 +81,8 @@
 			app = new Dopamine();
 
 			// add DopamineConsoleLogger
-			app.addPlugin(new DopamineConsoleLogger());
+			// set prefix for log message
+			app.addPlugin(new DopamineConsoleLogger({ prefix: 'Debug: ' }));
 
 			// add MyDopamine
 			app.addPlugin(myApp);

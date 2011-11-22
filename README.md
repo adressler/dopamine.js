@@ -10,7 +10,7 @@ It helps to connect software parts by messaging via Events, Callbacks, Method Ca
 
 ## Installation
 
-Download dopamine.js and install it in your public javascripts directory.
+Download dopamine.js and install it in your public javascripts directory.  
 Include it in your document AFTER jQuery.
 
 ## Usage

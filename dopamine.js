@@ -9,6 +9,7 @@
 
 	var default_options = {
 		enable: true,
+		pass: true,
 		accept: [],
 		ignore: []
 	}
@@ -112,9 +113,13 @@
 		},
 
 		__call_plugins: function(type, arg) {
-			$.each(this.plugins, function(i, plugin) {
-				plugin.call(type, arg);
-			});
+			if (this.options.pass) {
+				$.each(this.plugins, function(i, plugin) {
+					plugin.call(type, arg);
+				});
+				return true;
+			};
+			return false;
 		}
 	}
 

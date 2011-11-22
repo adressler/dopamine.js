@@ -12,7 +12,8 @@
 		name: 'DopamineConsoleLogger',
 
 		_default: function(type, arg) {
-			console.debug('[' + type + ']', arg);
+			var prefix = this.options.prefix || '';
+			console.debug(prefix + '[' + type + ']', arg);
 		}
 
 	});

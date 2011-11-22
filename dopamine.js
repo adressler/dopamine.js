@@ -86,7 +86,7 @@
 			}
 
 			// call plugins
-			this.__call_plugins(type, type, arg);
+			this.__call_plugins(type, arg);
 
 			return true;
 		},
@@ -98,7 +98,7 @@
 		__call_method: function(method, type, arg) {
 			var method = '_' + method;
 			if (typeof(this[method]) == 'function') {
-				this[method].call(this, type, arg);
+				this[method](type, arg);
 				return true;
 			}
 			return false;

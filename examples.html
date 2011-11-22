@@ -15,14 +15,16 @@
 
 			app = new Dopamine();
 
-			// bind to event 'test'
+			// bind to event 'test': use bind(message_type, function)
 			app.bind('test', function(e, type, arg) {
 				console.log("event 'test'", arg);
 			});
 
-			// bind to event 'default'
-			app.bind('default', function(e, type, arg) {
-				console.log("event 'default'", arg);
+			// bind to event 'default': use bind(map)
+			app.bind({
+				default: function(e, type, arg) {
+					console.log("event 'default'", arg);
+				}
 			});
 
 			// triggers test and default events

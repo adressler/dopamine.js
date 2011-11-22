@@ -13,7 +13,12 @@
 
 			// --- EVENTS
 
-			app = new Dopamine();
+			// options array is optional
+			app = new Dopamine({
+				enable: true, // ignores all calls when false
+				accept: [], // accept only whitelisted types, or all if empty
+				ignore: [] // ignore all blacklisted types, or none if empty
+			});
 
 			// bind to event 'test': use bind(message_type, function)
 			app.bind('test', function(e, type, arg) {

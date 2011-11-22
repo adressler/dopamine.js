@@ -7,11 +7,6 @@
  */
 ;(function($) {
 
-	if (!window.Dopamine) {
-		console.error('dopamine.js missing');
-		return;
-	}
-
 	window.DopamineConsoleLogger = Dopamine.extend({
 
 		name: 'DopamineConsoleLogger',

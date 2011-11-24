@@ -36,4 +36,4 @@ Many thanks to [Dirk Brünsicke](https://github.com/d1rk) for suggesting the nam
 ## Next steps
 
 - Include documentation into this readme
-- Expose more of the native interfaces of Events and Callbacks
+- Expose native interface of Events

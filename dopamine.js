@@ -55,9 +55,13 @@
 
 			var self = this;
 			$.each(map, function(type, func) {
-				self.callbacks[type] = self.callbacks[type] || $.Callbacks();
-				self.callbacks[type].add(func);
+				self.getCallback(type).add(func);
 			});
+		},
+
+		getCallback: function(type) {
+			this.callbacks[type] = this.callbacks[type] || $.Callbacks();
+			return this.callbacks[type];
 		},
 
 		acceptsType: function(type) {

@@ -56,7 +56,12 @@
 				}
 			});
 
-			// triggers both 'test' callbacks as well as 'default' callback
+			// or use native $.Callback interface
+			app.getCallback('test').add(function(type, arg) {
+				console.log("callback #3 'test'", arg);
+			});
+
+			// triggers all 'test' callbacks as well as 'default' callback
 			app.call('test', 'Foo');
 
 

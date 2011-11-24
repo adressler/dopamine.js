@@ -36,4 +36,3 @@ Many thanks to [Dirk Brünsicke](https://github.com/d1rk) for suggesting the nam
 ## Next steps
 
 - Include documentation into this readme
-- Expose native interface of Events

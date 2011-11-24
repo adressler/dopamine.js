@@ -30,12 +30,19 @@
 			this.options = $.extend({}, default_options, options);
 		},
 
+		// wrap jQuery bind method
 		bind: function(type, func) {
-			$(this).bind(type, func);
+			$(this).bind.apply($(this), arguments);
 		},
 
+		// wrap jQuery unbind method
 		unbind: function(type, func) {
-			$(this).unbind(type, func);
+			$(this).unbind.apply($(this), arguments);
+		},
+
+		// wrap jQuery one method
+		one: function(type, func) {
+			$(this).one.apply($(this), arguments);
 		},
 
 		addPlugin: function() {

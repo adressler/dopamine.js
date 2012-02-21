@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * See LICENSE for details.
  */
-;(function($) {
+;!function($) {
 
 	window.DopamineConsoleLogger = Dopamine.extend({
 
@@ -19,4 +19,4 @@
 
 	});
 
-})(window.jQuery);
+}(window.jQuery);

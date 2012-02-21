@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * See LICENSE for details.
  */
-;(function($) {
+;!function($) {
 
 	var default_options = {
 		enable: true,
@@ -147,4 +147,4 @@
 	// globalize class 
 	window.Dopamine = Dopamine;
 
-})(window.jQuery);
+}(window.jQuery);

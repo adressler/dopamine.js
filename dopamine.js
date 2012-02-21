@@ -1,5 +1,6 @@
 /*!
  * dopamine.js
+ * https://github.com/adressler/dopamine.js
  *
  * Copyright 2011, Armin Dressler
  * Licensed under the MIT license.

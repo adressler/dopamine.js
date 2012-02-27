@@ -16,7 +16,7 @@
 	}
 
 	var Dopamine = function() {
-		this.init.apply(this, arguments);
+		this.constructor.apply(this, arguments);
 	}
 
 	Dopamine.prototype = {
@@ -25,13 +25,17 @@
 
 		options: {},
 
-		init: function(options) {
+		constructor: function(options) {
 			options = options || {};
 
 			this.plugins = [];
 			this.callbacks = {};
 			this.options = $.extend({}, default_options, this.options, options);
+
+			this.init();
 		},
+
+		init: function() {},
 
 		// wrap jQuery bind method
 		bind: function(type, func) {
@@ -139,7 +143,7 @@
 
 	Dopamine.extend = function(prototype) {
 		var newDopamine = function() {
-			this.init.apply(this, arguments);
+			this.constructor.apply(this, arguments);
 		};
 		newDopamine.prototype = $.extend({}, this.prototype, prototype || {});
 		newDopamine.extend = Dopamine.extend;

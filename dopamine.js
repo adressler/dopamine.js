@@ -23,12 +23,14 @@
 
 		name: 'Dopamine',
 
+		options: {},
+
 		init: function(options) {
 			options = options || {};
 
 			this.plugins = [];
 			this.callbacks = {};
-			this.options = $.extend({}, default_options, options);
+			this.options = $.extend({}, default_options, this.options, options);
 		},
 
 		// wrap jQuery bind method

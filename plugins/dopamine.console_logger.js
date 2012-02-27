@@ -12,6 +12,10 @@
 
 		name: 'DopamineConsoleLogger',
 
+		options: {
+			prefix: 'DEBUG: '
+		},
+
 		_default: function(type, arg) {
 			var prefix = this.options.prefix || '';
 			console.debug(prefix + '[' + type + ']', arg);

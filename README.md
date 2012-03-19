@@ -29,7 +29,7 @@ See file LICENSE for details.
 
 ## Authors
 
-dopamine.js was created and is maintained by Armin Dressler <dressler.armin at gmail.com>
+dopamine.js was created and is maintained by Armin Dressler <dressler.armin at gmail.com>.
 
 Many thanks to [Dirk Brünsicke](https://github.com/d1rk) for suggesting the name 'dopamine'.
 
